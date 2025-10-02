@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kittithat - Portfolio</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Header -->
+  <header data-aos="fade-down">
+    <img src="images/Profile.jpg" alt="My Profile" class="profile-pic"/>
+    <h1>Kittithat</h1>
+    <p>Computer Science Student | Software Tester</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav data-aos="fade-down" data-aos-delay="200">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+    <!-- About -->
+    <section id="about" data-aos="fade-up">
+      <h2>About Me</h2>
+      <p>
+        Enthusiastic Software Tester with experience in both manual and automated testing. 
+        Skilled in writing test cases, executing test plans, reporting bugs, and validating software quality. 
+        Familiar with Agile methodology, API testing, and automation frameworks. 
+        Passionate about improving product quality and delivering a seamless user experience.
+      </p>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" data-aos="fade-up">
+      <h2>Skills</h2>
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="manual">Manual Testing</button>
+        <button class="tab-btn" data-tab="automation">Automation</button>
+        <button class="tab-btn" data-tab="tools">Tools</button>
+      </div>
+
+      <!-- Manual -->
+      <div class="tab-content active" id="manual">
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fas fa-check-square"></i> Test Case Design</div>
+          <div class="skill-card"><i class="fas fa-bug"></i> Bug Reporting</div>
+          <div class="skill-card"><i class="fas fa-tasks"></i> Test Execution</div>
+        </div>
+      </div>
+
+      <!-- Automation -->
+      <div class="tab-content" id="automation">
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fab fa-python"></i> Selenium (Python)</div>
+          <div class="skill-card"><i class="fas fa-robot"></i> Robot Framework</div>
+        </div>
+      </div>
+
+      <!-- Tools -->
+      <div class="tab-content" id="tools">
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fas fa-database"></i> PostgreSQL</div>
+          <div class="skill-card"><i class="fas fa-network-wired"></i> Postman (API Testing)</div>
+          <div class="skill-card"><i class="fab fa-jira"></i> Jira</div>
+          <div class="skill-card"><i class="fab fa-git-alt"></i> GitHub</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" data-aos="fade-left">
+  <h2>Testing Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card" data-aos="flip-left">
+      <img src="images/manual-testing.png" alt="Manual Testing Project" class="project-img"/>
+      <h3>Manual Testing – E-commerce Website</h3>
+      <p>
+        Designed test cases for login, checkout, and payment system.  
+        Reported and tracked bugs using Jira.  
+        Delivered a detailed Test Report for the QA team.
+      </p>
+    </div>
+
+    <div class="project-card" data-aos="flip-left" data-aos-delay="200">
+      <img src="images/automation-testing.png" alt="Automation Testing Project" class="project-img"/>
+      <h3>Automation Testing – User Registration</h3>
+      <p>
+        Built automation scripts using Selenium with Python to test signup/login flow.  
+        Integrated with Jenkins for scheduled test execution and reporting.
+      </p>
+    </div>
+
+    <div class="project-card" data-aos="flip-left" data-aos-delay="400">
+      <img src="images/api-testing.png" alt="API Testing Project" class="project-img"/>
+      <h3>API Testing – Movie Ticket Booking</h3>
+      <p>
+        Used Postman to validate REST APIs for ticket booking system.  
+        Created test collections, verified response codes & response times, and set up automated runs.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <div class="contact-links">
+        <a href="mailto:kittithatchaichana@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://github.com/starduztx" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <a href="https://www.linkedin.com/in/kittithat-chaichana-35b0702a7/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer data-aos="fade-up">
+    <p>© 2025 Starduztx</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    const tabs = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(btn => btn.classList.remove('active'));
+        contents.forEach(c => c.classList.remove('active'));
+        tab.classList.add('active');
+        document.getElementById(tab.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>
